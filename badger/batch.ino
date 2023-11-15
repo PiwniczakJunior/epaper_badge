@@ -7,6 +7,10 @@
 #include "qr.h"
 #include <Arduino.h>
 
+char *Name[]={"Jan Byczuk"}
+char *Title[]={"Leader of R&D Team"}
+char *Depart[]={"Service Department"}
+
 struct Button {
     const uint8_t PIN;
     bool pressed;
@@ -34,9 +38,9 @@ void id(){
     	Paint_SelectImage(BlackImage);
 	    Paint_Clear(WHITE);
 	    Paint_DrawBitMap(mdrnnn);
-      Paint_DrawString_EN(5, 15, "Jan Byczuk", &Font24, WHITE, BLACK);
-      Paint_DrawString_EN(5, 68, "Leader of R&D Team", &Font16, WHITE, BLACK);
-      Paint_DrawString_EN(5, 90, "Service Department", &Font16, WHITE, BLACK);
+      Paint_DrawString_EN(5, 15, Name[], &Font24, WHITE, BLACK);
+      Paint_DrawString_EN(5, 68, Title[], &Font16, WHITE, BLACK);
+      Paint_DrawString_EN(5, 90, Depart[], &Font16, WHITE, BLACK);
       EPD_2in13_V3_Display(BlackImage);
 	    //DEV_Delay_ms(2000);
   #endif
